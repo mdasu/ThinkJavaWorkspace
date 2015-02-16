@@ -10,15 +10,14 @@ public class Tester {
 		Tile tile = new Tile();
 
 		for (int i = 0; i <= 6; i++) {
-			letter = tile.getNewTile();
+			tile.setNewTile();
 			//System.out.println("Letter is: " + letter);
 			printTile(tile); 
 		}
 	}
 
 	public static void printTile(Tile t){
-		System.out.println("Letter is: " + t.letter);
-
+		System.out.println("Letter/value is: " + t.letter + " - " + t.value);
 	}
 	
 	/*
