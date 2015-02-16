@@ -9,7 +9,7 @@ public class Tester {
 	
 		Tile tile = new Tile();
 
-		for (int i = 0; i <= 6; i++) {
+		for (int i = 0; i <= 116; i++) {
 			tile.setNewTile();
 			//System.out.println("Letter is: " + letter);
 			printTile(tile); 

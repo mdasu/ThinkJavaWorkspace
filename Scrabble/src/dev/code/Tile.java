@@ -4,11 +4,11 @@ public class Tile {
 
 	int value = 0;
 	char letter = '\0';
-	static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	static String letterValue = "1332142418513113X11114484X"; /* X = 10 */
-	static String numOfLetter = "9224Z232911426821646422121"; /* Z = 12 */
+	static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_"; /* _ = Blank */
+	static String letterValue = "1332142418513113X11114484X0"; /* X = 10 */
+	static String numOfLetter = "9224Z2329114268216464221212"; /* Z = 12 */
 
-	static String[][] letterAry = new String[26][3];
+	static String[][] letterAry = new String[27][3];
 
 	/*
 	 * Tile distribution A: 9 tiles B: 2 tiles C: 2 tiles D: 4 tiles E: 12 tiles
@@ -18,12 +18,12 @@ public class Tile {
 	 * Z: 1 tile
 	 */
 
-	/* Tile value:
-	 * A is worth 1 B is worth 3 C is worth 3 D is worth 2 E is worth 1 F is
-	 * worth 4 G is worth 2 H is worth 4 I is worth 1 J is worth 8 K is worth 5
-	 * L is worth 1 M is worth 3 N is worth 1 O is worth 1 P is worth 3 Q is
-	 * worth 10 R is worth 1 S is worth 1 T is worth 1 U is worth 1 V is worth 4
-	 * W is worth 4 X is worth 8 Y is worth 4 Z is worth 10
+	/*
+	 * Tile value: A is worth 1 B is worth 3 C is worth 3 D is worth 2 E is
+	 * worth 1 F is worth 4 G is worth 2 H is worth 4 I is worth 1 J is worth 8
+	 * K is worth 5 L is worth 1 M is worth 3 N is worth 1 O is worth 1 P is
+	 * worth 3 Q is worth 10 R is worth 1 S is worth 1 T is worth 1 U is worth 1
+	 * V is worth 4 W is worth 4 X is worth 8 Y is worth 4 Z is worth 10
 	 */
 
 	public Tile() {
@@ -55,7 +55,7 @@ public class Tile {
 	}
 
 	private static int getRandom() {
-		int max = 25;
+		int max = 27;
 		double ran = Math.random();
 		double ranD = ran * max;
 		int ranI = (int) ranD;
@@ -63,7 +63,7 @@ public class Tile {
 	}
 
 	private static void buildArray() {
-		for (int i = 0; i < 26; i++) {
+		for (int i = 0; i < 27; i++) {
 			letterAry[i][0] = String.valueOf(alphabet.charAt(i));
 			letterAry[i][1] = String.valueOf(letterValue.charAt(i));
 			letterAry[i][2] = String.valueOf(numOfLetter.charAt(i));
