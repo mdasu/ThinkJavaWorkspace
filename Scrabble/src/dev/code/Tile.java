@@ -62,20 +62,36 @@ public class Tile {
 		return ranI;
 	}
 
+	private static String convert(String n) {
+		String output = "";
+
+		if (n.equals("X")) {
+			output = "10";
+		}
+		if (n.equals("Z")) {
+			output = "12";
+		}
+		return output;
+	}
+
 	private static void buildArray() {
+		String convert = "";
 		for (int i = 0; i < 27; i++) {
 			letterAry[i][0] = String.valueOf(alphabet.charAt(i));
 			letterAry[i][1] = String.valueOf(letterValue.charAt(i));
 			letterAry[i][2] = String.valueOf(numOfLetter.charAt(i));
+			// Convert X to 10 if found
 
-			// Convert X to 10 if found in letterValue array
-			if (letterAry[i][1].equals("X")) {
-				letterAry[i][1] = "10";
+			convert = convert(letterAry[i][1]);
+			if (!convert.equals("")) {
+				letterAry[i][1] = convert;
 			}
 			// Convert Z to 12 if found in numOfLetter array
-			if (letterAry[i][2].equals("Z")) {
-				letterAry[i][2] = "12";
+			convert = convert(letterAry[i][2]);
+			if (!convert.equals("")) {
+				letterAry[i][2] = convert;
 			}
+			// letterAry[i][2] = convert(letterAry[i][2]);
 		}
 	}
 
